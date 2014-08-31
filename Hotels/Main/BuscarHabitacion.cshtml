@@ -1,0 +1,47 @@
+﻿<html>
+    <head>
+        <link rel="stylesheet" href="~/Styles/Site.css">
+        <title>Hotels</title>
+    </head>
+    <body>
+        <div style="position: absolute; left: 90%">
+            <form method="put" action="~/Main/Page.cshtml">
+                 <input type="image" name="Salir" src="/Images/Recursos/Salir.jpg" 
+                style="width: 50px; height: 50px">
+            </form>
+        </div>
+        <div>
+            <h1>Reserva tu almohada</h1>
+            <h2>Buscar habitación</h2>
+        </div>
+        <div>
+            <form method="post" action="~/Main/Reserva.cshtml">
+                <p>
+                    Fecha de ingreso
+                    @{string fecha=@DateTime.Now.Year+"-0"+@DateTime.Now.Month+"-"+@DateTime.Now.Day;}
+                    <input type="date" name="FechaIngreso" value=@fecha min=@fecha>
+                </p>
+                <p>
+                    Fecha de salida
+                    <input type="date" name="FechaSalida" value=@fecha min=@fecha>
+                </p>
+                <p>
+                    Tipo de habitación
+                    <select name="TipoHabitación">
+                        <option value="Simple">Simple</option>
+                        <option value="Doble">Doble</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="submit" value="Buscar">
+                </p>
+            </form>
+        </div>
+        <div style="position:absolute;top: 90%">
+            <form method="put" action="~/Main/Page.cshtml">
+                 <input type="image" name="Salir" src="/Images/Recursos/Regresar.jpg" 
+                style="position: absolute; width: 50px; height: 50px">
+            </form>
+        </div>
+    </body>
+</html>

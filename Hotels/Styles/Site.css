@@ -1,0 +1,30 @@
+body {
+    font-family: 'Comic Sans MS';
+    background: url('/Images/Fondos/FondoDerecha.jpg') no-repeat right bottom,url('/Images/Fondos/FondoIzquierda.jpg') no-repeat left bottom
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+h2{
+    font-size: 35px;
+    text-align: center;
+}
+div{
+    font-size: 20px;
+    text-align: center;
+}
+form{
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+input[type="submit"]{
+    background-color: #f3c0c0;
+    font-family: 'Comic Sans MS';
+    height: 35px;
+    width: 100px;
+    border-color: #000;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+}

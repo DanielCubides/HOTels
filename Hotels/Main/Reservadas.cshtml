@@ -1,0 +1,50 @@
+﻿@{
+    List <int> habitaciones=new List<int>();
+    if(Request["habitaciones"]!=null){
+        foreach(string val in Request["habitaciones"].Split(',')){
+            habitaciones.Add(val.AsInt());
+        }
+    }
+}
+<html>
+    <head>
+        <title>Hotels</title>
+        <link rel="stylesheet" href="~/Styles/Site.css">
+    </head>
+    <body>
+        <div style="position: absolute; left: 90%">
+            <form method="put" action="~/Main/Page.cshtml">
+                 <input type="image" name="Salir" src="/Images/Recursos/Salir.jpg" 
+                style="width: 50px; height: 50px">
+            </form>
+        </div>
+        <div>
+            <h1>Reserva tu almohada</h1>
+            @{
+                if(habitaciones.Count==1){
+                    <h2>Habitación reservada</h2>
+                    var text="00"+habitaciones.ElementAt(0);
+                    <text>La habitación @text ha sido reservada</text>
+                }else{
+                    <h2>Habitaciones reservadas</h2>
+                    <text>Las habitaciones</text>
+                    foreach(var value in habitaciones){
+                        var text="00"+value;
+                        <text>@text,</text>
+                    }
+                    <text>han sido reservadas</text>
+                }
+                <br><text>del xx/xx/xxxx al xx/xx/xxxx</text>
+            }
+            <form method="post" name="form" action="~/Default.cshtml">
+                <input type="submit" value="Aceptar" style="position: absolute; bottom: 50%; left: 45%">
+            </form>
+        </div>
+        <div style="position:absolute;top: 90%">
+            <form method="put" action="~/Main/Reserva.cshtml">
+                 <input type="image" name="Salir" src="/Images/Recursos/Regresar.jpg" 
+                style="position: absolute; width: 50px; height: 50px">
+            </form>
+        </div>
+    </body>
+</html>
