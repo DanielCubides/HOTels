@@ -1,0 +1,31 @@
+﻿@{
+    //Layout = "~/_SiteLayout.cshtml";
+    Page.Title = " Reserva tu Almohada ";
+}
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@Page.Title.</h1>
+            <h2>Aplicacion de reserva de habitacion del hotel JADAF </h2>
+        </hgroup>
+        <p>
+            To learn more about ASP.NET Web Pages, visit
+            <a href="http://asp.net/webpages" title="ASP.NET Web Pages Website">http://asp.net/webpages</a>.
+            The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET Web Pages.
+            If you have any questions about ASP.NET Web Pages, visit
+            <a href="http://forums.iis.net/1166.aspx" title="ASP.NET Web Pages Forum">our forums</a>.
+        </p>
+    </div>
+</section>
+}
+<html>
+<head>
+    <title>Hotels</title>
+</head>
+<body>
+    @RenderPage("~/Views/_Default.cshtml")
+    <!--<br><br><p>&copy; 2014 Universidad Nacional de Colombia. All rights reserved. (Layout)</p><-->
+</body>
+</html>
