@@ -58,7 +58,7 @@ namespace Hotels.Models
     public class LoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Nombre")]
         public string UserName { get; set; }
 
         [Required]
