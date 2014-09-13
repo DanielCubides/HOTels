@@ -13,6 +13,8 @@ namespace Hotels.Models
         public DateTime StarDate { get; set; }
         public DateTime EndDate { get; set; }
         public decimal Price { get; set; }
+
+        public ICollection<Reserva> Reserva { get; set; }
     }
 
     public class HabitacionDBContext : DbContext

@@ -13,6 +13,9 @@ namespace Hotels.Models
         public Habitacion Habitacion { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
+        public int HabitacionID { get; set; }
+        public Habitacion HabitacionID { get; set; }
     }
 
     public class ReservaDBContext : DbContext
