@@ -5,6 +5,7 @@ using System.Web;
 /// <summary>
 /// Summary description for Class1
 /// </summary>
+/// 
 public class Admin : User
 {
     private String hotel;
