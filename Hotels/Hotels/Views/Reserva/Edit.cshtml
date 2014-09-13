@@ -31,6 +31,14 @@
             @Html.ValidationMessageFor(model => model.EndDate)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HabitacionID, "Habitacion")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("HabitacionID", String.Empty)
+            @Html.ValidationMessageFor(model => model.HabitacionID)
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>
