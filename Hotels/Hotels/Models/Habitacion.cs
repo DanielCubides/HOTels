@@ -15,12 +15,8 @@ namespace Hotels.Models
         public DateTime StarDate { get; set; }
         public DateTime EndDate { get; set; }
         public decimal Price { get; set; }
-<<<<<<< HEAD
         public virtual ICollection<Reserva> Reserva { get; set; }
-=======
 
-        public ICollection<Reserva> Reserva { get; set; }
->>>>>>> origin/master
     }
 
 }
