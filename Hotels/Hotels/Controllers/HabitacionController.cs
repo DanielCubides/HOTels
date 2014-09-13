@@ -11,22 +11,22 @@ namespace Hotels.Controllers
 {
     public class HabitacionController : Controller
     {
-        private HabitacionDBContext db = new HabitacionDBContext();
+        private DBContext db = new DBContext();
 
         //
-        // GET: /Default1/
+        // GET: /Habitacion/
 
         public ActionResult Index()
         {
-            return View(db.Habitaciones.ToList());
+            return View(db.Habitacions.ToList());
         }
 
         //
-        // GET: /Default1/Details/5
+        // GET: /Habitacion/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            Habitacion habitacion = db.Habitaciones.Find(id);
+            Habitacion habitacion = db.Habitacions.Find(id);
             if (habitacion == null)
             {
                 return HttpNotFound();
@@ -35,7 +35,7 @@ namespace Hotels.Controllers
         }
 
         //
-        // GET: /Default1/Create
+        // GET: /Habitacion/Create
 
         public ActionResult Create()
         {
@@ -43,7 +43,7 @@ namespace Hotels.Controllers
         }
 
         //
-        // POST: /Default1/Create
+        // POST: /Habitacion/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -51,7 +51,7 @@ namespace Hotels.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Habitaciones.Add(habitacion);
+                db.Habitacions.Add(habitacion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -60,11 +60,11 @@ namespace Hotels.Controllers
         }
 
         //
-        // GET: /Default1/Edit/5
+        // GET: /Habitacion/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Habitacion habitacion = db.Habitaciones.Find(id);
+            Habitacion habitacion = db.Habitacions.Find(id);
             if (habitacion == null)
             {
                 return HttpNotFound();
@@ -73,7 +73,7 @@ namespace Hotels.Controllers
         }
 
         //
-        // POST: /Default1/Edit/5
+        // POST: /Habitacion/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -89,11 +89,11 @@ namespace Hotels.Controllers
         }
 
         //
-        // GET: /Default1/Delete/5
+        // GET: /Habitacion/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Habitacion habitacion = db.Habitaciones.Find(id);
+            Habitacion habitacion = db.Habitacions.Find(id);
             if (habitacion == null)
             {
                 return HttpNotFound();
@@ -102,14 +102,14 @@ namespace Hotels.Controllers
         }
 
         //
-        // POST: /Default1/Delete/5
+        // POST: /Habitacion/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Habitacion habitacion = db.Habitaciones.Find(id);
-            db.Habitaciones.Remove(habitacion);
+            Habitacion habitacion = db.Habitacions.Find(id);
+            db.Habitacions.Remove(habitacion);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

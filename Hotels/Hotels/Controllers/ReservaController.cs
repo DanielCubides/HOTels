@@ -11,14 +11,15 @@ namespace Hotels.Controllers
 {
     public class ReservaController : Controller
     {
-        private ReservaDBContext db = new ReservaDBContext();
+        private DBContext db = new DBContext();
 
         //
         // GET: /Reserva/
 
         public ActionResult Index()
         {
-            return View(db.Reservas.ToList());
+            var reservas = db.Reservas.Include(r => r.Habitacion);
+            return View(reservas.ToList());
         }
 
         //
@@ -39,6 +40,7 @@ namespace Hotels.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID");
             return View();
         }
 
@@ -56,6 +58,7 @@ namespace Hotels.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID", reserva.HabitacionID);
             return View(reserva);
         }
 
@@ -69,6 +72,7 @@ namespace Hotels.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID", reserva.HabitacionID);
             return View(reserva);
         }
 
@@ -85,6 +89,7 @@ namespace Hotels.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID", reserva.HabitacionID);
             return View(reserva);
         }
 

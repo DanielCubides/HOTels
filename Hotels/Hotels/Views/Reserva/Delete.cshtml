@@ -23,6 +23,13 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.EndDate)
     </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Habitacion.ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Habitacion.ID)
+    </div>
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
