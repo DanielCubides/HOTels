@@ -11,8 +11,14 @@ namespace Hotels.Models
         public int ID { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+<<<<<<< HEAD
         public int HabitacionID { get; set; }
         public virtual Habitacion Habitacion { get; set; }
+=======
+
+        public int HabitacionID { get; set; }
+        public Habitacion HabitacionID { get; set; }
+>>>>>>> origin/master
     }
 
 }
