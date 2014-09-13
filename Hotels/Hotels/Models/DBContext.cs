@@ -20,5 +20,7 @@ namespace Hotels.Models
         public DbSet<Reserva> Reservas { get; set; }
 
         public DbSet<Habitacion> Habitacions { get; set; }
+
+        public DbSet<UserProfile> UserProfiles { get; set; }
     }
 }

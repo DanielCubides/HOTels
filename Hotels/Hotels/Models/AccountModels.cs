@@ -11,7 +11,7 @@ namespace Hotels.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DefaultConnection")
+            : base("DBContext")
         {
         }
 
@@ -25,6 +25,8 @@ namespace Hotels.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+
+        public virtual ICollection<Reserva> Reserva { get; set; }
     }
 
     public class RegisterExternalLoginModel

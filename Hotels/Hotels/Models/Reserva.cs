@@ -13,6 +13,7 @@ namespace Hotels.Models
         public DateTime EndDate { get; set; }
         public int HabitacionID { get; set; }
         public virtual Habitacion Habitacion { get; set; }
+        public virtual UserProfile usuario { get; set; }
 
     }
 

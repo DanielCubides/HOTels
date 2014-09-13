@@ -41,6 +41,8 @@ namespace Hotels.Controllers
         public ActionResult Create()
         {
             ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID");
+            ViewBag.UserProfileID = new SelectList(db.UserProfiles , "ID", "ID");
+
             return View();
         }
 
@@ -57,8 +59,9 @@ namespace Hotels.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            
             ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID", reserva.HabitacionID);
+            ViewBag.UserProfileID = new SelectList(db.UserProfiles, "ID", "ID", reserva.usuario);
             return View(reserva);
         }
 
