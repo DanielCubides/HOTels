@@ -1,0 +1,12 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <text>
+        
+        @Html.ActionLink("Reserva tu Almohada", "Index", "Reserva", routeValues: null, htmlAttributes: new { id = "reservaLink" })
+        
+    </text>
+}
+else
+{
+    @Html.ActionLink("Reserva tu Almohada", "Index", "Home", routeValues: null, htmlAttributes: new { id = "inicioLink" })
+}

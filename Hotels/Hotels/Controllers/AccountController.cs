@@ -37,11 +37,11 @@ namespace Hotels.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
-                return RedirectToLocal(returnUrl);
+                return RedirectToAction("Index", "Reserva");
             }
 
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            ModelState.AddModelError("", "La nombre de usuario o la contraseña son incorrectos");
             return View(model);
         }
 
@@ -81,7 +81,7 @@ namespace Hotels.Controllers
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Reserva");
                 }
                 catch (MembershipCreateUserException e)
                 {
