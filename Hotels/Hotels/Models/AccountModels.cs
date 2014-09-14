@@ -67,26 +67,8 @@ namespace Hotels.Models
     public class RegisterModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "El nombre debe ser de al menos {2} caracteres", MinimumLength = 3)]
-        [Display(Name = "Nombre ")]
+        [Display(Name = "Nombre de usuario")]
         public string UserName { get; set; }
-
-
-        [Required]
-        [StringLength(100, ErrorMessage = "El apellido debe ser de al menos {2} caracteres", MinimumLength = 3)]
-        [Display(Name = "Apellido")]
-        public string UserLastName { get; set; }
-
-
-        [Required]
-        [Display(Name = "Correo")]
-        public string Correo { get; set; }
-
-        [Required]
-
-        [Display(Name = "Telefono")]
-        public string Telefono { get; set; }
-
 
         [Required]
         [StringLength(100, ErrorMessage = "La contraseña debe se de al menos {2} caracteres", MinimumLength = 6)]
