@@ -4,6 +4,24 @@
 }
 
 
+@if (Request.IsAuthenticated)
+{
+    <text>
+        
+       
+<script type="text/javascript">
+    window.location=" ~/View/Reserva/Index.cshtml";
+</script>
+
+
+
+    </text>
+}
+else
+{
+
+
+
     <article>
 
         <ol class="round">
@@ -32,6 +50,13 @@
         </ol>
 
     </article>
+
+}
+
+
+
+
+
 
 
 

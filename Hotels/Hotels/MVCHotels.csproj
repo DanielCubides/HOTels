@@ -306,8 +306,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\HelloWorld\Index.cshtml" />
-    <Content Include="Views\HelloWorld\Welcome.cshtml" />
     <Content Include="Views\Habitacion\Index.cshtml" />
     <Content Include="Views\Habitacion\Details.cshtml" />
     <Content Include="Views\Habitacion\Create.cshtml" />
@@ -318,6 +316,7 @@
     <Content Include="Views\Reserva\Create.cshtml" />
     <Content Include="Views\Reserva\Edit.cshtml" />
     <Content Include="Views\Reserva\Delete.cshtml" />
+    <Content Include="Views\Shared\_Inicio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
