@@ -6,16 +6,13 @@
 
 @if (Request.IsAuthenticated)
 {
-    <text>
-        
-       
-<script type="text/javascript">
-    window.location=" ~/View/Reserva/Index.cshtml";
-</script>
 
 
 
-    </text>
+    Response.Redirect("Reserva");
+
+
+   
 }
 else
 {

@@ -35,13 +35,13 @@ namespace Hotels.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            if (ModelState.IsValid && WebSecurity.Login(model.Email, model.Password, persistCookie: model.RememberMe))
             {
                 return RedirectToAction("Index", "Reserva");
             }
 
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "La nombre de usuario o la contraseña son incorrectos");
+            ModelState.AddModelError("", "El correo  o la contraseña son incorrectos");
             return View(model);
         }
 
@@ -79,8 +79,8 @@ namespace Hotels.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.Email, model.Password);
+                    WebSecurity.Login(model.Email, model.Password);
                     return RedirectToAction("Index", "Reserva");
                 }
                 catch (MembershipCreateUserException e)

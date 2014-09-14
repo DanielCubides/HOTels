@@ -24,7 +24,7 @@ namespace Hotels.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
-        public string UserName { get; set; }
+        public string Email { get; set; }
 
         public virtual ICollection<Reserva> Reserva { get; set; }
     }
@@ -52,8 +52,8 @@ namespace Hotels.Models
     public class LoginModel
     {
         [Required]
-        [Display(Name = "Nombre")]
-        public string UserName { get; set; }
+        [Display(Name = "Correo")]
+        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
