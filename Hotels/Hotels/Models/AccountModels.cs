@@ -100,5 +100,22 @@ namespace Hotels.Models
         public string ConfirmPassword { get; set; }
     }
 
-    
+    public class ModificacionModel
+    {
+        
+        [Display(Name = "Nombre ")]
+        public string UserName { get; set; }
+
+
+        [Display(Name = "Apellido")]
+        public string UserLastName { get; set; }
+
+
+        [Display(Name = "Correo")]
+        public string Email { get; set; }
+
+        [Display(Name = "Telefono")]
+        public string Telefono { get; set; }
+
+    }
 }
