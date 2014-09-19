@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Hotels.Models;
+using WebMatrix.WebData;
 
 namespace Hotels.Controllers
 {
@@ -52,6 +53,7 @@ namespace Hotels.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Reserva reserva)
         {
+            reserva.UsuarioID = WebSecurity.CurrentUserId;
             if (ModelState.IsValid)
             {
                 db.Reservas.Add(reserva);
