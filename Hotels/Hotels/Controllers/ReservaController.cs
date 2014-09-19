@@ -53,6 +53,7 @@ namespace Hotels.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Reserva reserva)
         {
+            
             if (ModelState.IsValid)
             {
                 db.Reservas.Add(reserva);

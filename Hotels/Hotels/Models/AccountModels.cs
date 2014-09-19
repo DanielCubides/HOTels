@@ -18,16 +18,7 @@ namespace Hotels.Models
         public DbSet<UserProfile> UserProfiles { get; set; }
     }
 
-    [Table("UserProfile")]
-    public class UserProfile
-    {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
-        public string Email { get; set; }
-
-        public virtual ICollection<Reserva> Reserva { get; set; }
-    }
+    
 
    
     public class LocalPasswordModel

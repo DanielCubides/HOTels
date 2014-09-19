@@ -193,6 +193,7 @@
     <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\Habitacion.cs" />
     <Compile Include="Models\Reserva.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
