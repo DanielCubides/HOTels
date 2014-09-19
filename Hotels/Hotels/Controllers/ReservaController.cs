@@ -73,9 +73,30 @@ namespace Hotels.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Reserva reserva)
         {
+            var reservas = db.Reservas.Include(r => r.Habitacion);
+            List<Reserva> listadereservas = reservas.ToList();
+            foreach (Reserva r in listadereservas)
+            {
+                if (reserva.HabitacionID == r.HabitacionID)
+                {
+                    if ((reserva.StartDate < r.EndDate && reserva.StartDate > r.StartDate) ||
+                    (reserva.EndDate < r.EndDate && reserva.EndDate > r.StartDate))
+                    {
+                        return RedirectToAction("Lista");
+                    }
+                
+                }
+                
+
+            }
+
+
+
+            //-----------------Si todo va bien guarde la reserva---------
             reserva.UsuarioID = WebSecurity.CurrentUserId;
             if (ModelState.IsValid)
             {
+                
                 db.Reservas.Add(reserva);
                 db.SaveChanges();
                 return RedirectToAction("Index");
