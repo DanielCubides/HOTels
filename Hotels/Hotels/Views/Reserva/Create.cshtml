@@ -44,6 +44,14 @@
             @Html.ValidationMessageFor(model => model.HabitacionID)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UsuarioID, "Seleccionar Usuario")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("HabitacionID", String.Empty)
+            @Html.ValidationMessageFor(model => model.UsuarioID)
+        </div>
+
         <p>
             <input type="submit" value="Create" />
         </p>

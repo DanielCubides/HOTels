@@ -25,11 +25,11 @@ namespace Hotels.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<DBContext>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new DBContext())
                     {
                         if (!context.Database.Exists())
                         {

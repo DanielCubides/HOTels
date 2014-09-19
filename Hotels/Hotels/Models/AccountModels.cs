@@ -5,22 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
 using System.Web.Security;
+using Hotels.Models;
 
 namespace Hotels.Models
 {
-    public class UsersContext : DbContext
-    {
-        public UsersContext()
-            : base("DBContext")
-        {
-        }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
-    }
 
-    
-
-   
     public class LocalPasswordModel
     {
         [Required]
@@ -93,7 +83,7 @@ namespace Hotels.Models
 
     public class ModificacionModel
     {
-        
+
         [Display(Name = "Nombre ")]
         public string UserName { get; set; }
 

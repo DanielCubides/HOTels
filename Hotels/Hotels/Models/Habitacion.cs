@@ -12,10 +12,6 @@ namespace Hotels.Models
         [Key]
         public int ID { get; set; }
         [Required]
-        [StringLength(100, ErrorMessage = "El nombre debe ser de al menos {2} caracteres", MinimumLength = 3)]
-        [Display(Name = "Nombre de usuario")]
-        public string UserName { get; set; }
-        [Required]
         [Display(Name = "Disponible")]
         public bool Avalible { get; set; }
         [Required]

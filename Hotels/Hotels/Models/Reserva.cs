@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
-
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 using System.Globalization;
 using System.Web.Security;
+using Hotels.Models;
 
 namespace Hotels.Models
 {
@@ -28,12 +27,12 @@ namespace Hotels.Models
         public DateTime EndDate { get; set; }
 
         public int HabitacionID { get; set; }
+        public int UsuarioID { get; set; }
         public virtual Habitacion Habitacion { get; set; }
         public virtual UserProfile usuario { get; set; }
 
     }
 
-
+}
    
     
-}

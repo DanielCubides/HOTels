@@ -19,6 +19,7 @@ namespace Hotels.Controllers
         public ActionResult Index()
         {
             var reservas = db.Reservas.Include(r => r.Habitacion);
+            
             return View(reservas.ToList());
         }
 
@@ -41,8 +42,6 @@ namespace Hotels.Controllers
         public ActionResult Create()
         {
             ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID");
-            ViewBag.UserProfileID = new SelectList(db.UserProfiles , "ID", "ID");
-
             return View();
         }
 
@@ -53,16 +52,14 @@ namespace Hotels.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Reserva reserva)
         {
-            
             if (ModelState.IsValid)
             {
                 db.Reservas.Add(reserva);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            
+
             ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID", reserva.HabitacionID);
-            ViewBag.UserProfileID = new SelectList(db.UserProfiles, "ID", "ID", reserva.usuario);
             return View(reserva);
         }
 
