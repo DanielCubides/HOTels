@@ -24,6 +24,26 @@ namespace Hotels.Controllers
             return View(reservas.ToList());
         }
 
+        /* Give a list of CurrentUser's reservas*/
+        public ActionResult Lista() {
+            //obtenemos las reservas de la base de datos
+            var reservas = db.Reservas.Include(r => r.Habitacion);
+            //creamos una lista con estas reservas
+            List<Reserva> listadereservas = reservas.ToList();
+            //una lista auxiliar donde guardaremos las reservas del usuario
+            List<Reserva> reservasDelUsuario = new List<Reserva>();
+            //para cada reserva en la lista de las reservas
+            foreach (Reserva r in listadereservas)
+            {
+                //si es del usuario agreguela a la lista de las reservas del usuario
+                if (r.UsuarioID == WebSecurity.CurrentUserId) {
+                    reservasDelUsuario.Add(r);
+                }
+            }
+            //retorne la lista de las reservas del usuario
+            return View(reservasDelUsuario);
+        }
+
         //
         // GET: /Reserva/Details/5
 
