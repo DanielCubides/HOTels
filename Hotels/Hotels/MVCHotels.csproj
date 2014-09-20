@@ -318,6 +318,7 @@
     <Content Include="Views\Reserva\Delete.cshtml" />
     <Content Include="Views\Shared\_Inicio.cshtml" />
     <Content Include="Views\Account\Datos_personales.cshtml" />
+    <Content Include="Views\Reserva\IngresarFechas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

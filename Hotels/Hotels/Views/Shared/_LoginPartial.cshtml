@@ -1,7 +1,7 @@
 ﻿@if (Request.IsAuthenticated) {
     <text>
         
-        @Environment.UserName
+        @User.Identity.Name
         @Html.ActionLink("Datos personales", "Datos_personales", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })
         @Html.ActionLink("Cambiar contraseña", "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {

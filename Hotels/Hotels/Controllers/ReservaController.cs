@@ -127,5 +127,43 @@ namespace Hotels.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        //
+        // GET: /Reserva/IngresarFechas
+
+        public ActionResult IngresarFechas()
+        {
+            ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID");
+            ViewBag.UserProfileID = new SelectList(db.UserProfiles, "ID", "ID");
+
+            return View();
+        }
+
+        //
+        // POST: /Reserva/IngresarFechas
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult IngresarFechas(Reserva reserva)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Reservas.Add(reserva);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID", reserva.HabitacionID);
+            ViewBag.UserProfileID = new SelectList(db.UserProfiles, "ID", "ID", reserva.usuario);
+            return View(reserva);
+        }
+
+
+    
+    
+
+
     }
+
+     
 }
