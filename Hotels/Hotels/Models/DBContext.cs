@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using Hotels.Models;
 
 namespace Hotels.Models
 {
@@ -13,7 +14,7 @@ namespace Hotels.Models
         // 
         // System.Data.Entity.Database.SetInitializer(new System.Data.Entity.DropCreateDatabaseIfModelChanges<Hotels.Models.DBContext>());
 
-        public DBContext() : base("name=DBContext")
+        public DBContext() : base("DBContext")
         {
         }
 

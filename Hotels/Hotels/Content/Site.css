@@ -1,18 +1,83 @@
 ﻿html {
-    background-color: #e2e2e2;
+    background: url(../images/fondo.jpg) no-repeat transparent;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #fff;
     border-top: solid 10px #000;
-    color: #333;
+    color: white;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
 }
+
+#cuadradoBotonInicio {
+    position: absolute;
+    background-color:  rgb(107, 142, 35);
+    margin-left: 190px;
+    margin-top: 45px;
+    width: 320px;
+    height: 20px;
+    border-radius: 8px;
+}
+
+#inicioFondoBoton {
+    color: #333;
+    outline: none;
+    padding-top: 30px;
+    padding-left: 14px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    top:-10px;
+    left:190px;
+    text-decoration: underline;
+    background-color: rgba(218, 165, 32, 0.8);
+    border-radius: 8px;
+    position: absolute;
+}
+
+#inicioFondoBoton:hover {
+    background-color: rgb(218, 165, 32);
+}
+
+#textoInicio {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 960px;
+    margin-left: 80px;
+    margin-top: 35px;
+    padding: 20px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size:18px;
+}
+
+#cabeceraInicio {
+    background-color: rgb(107, 142, 35);
+    height: 70px;
+    color: white;
+    margin-top:-10px;
+}
+
+#cabeceraInicio a {
+	text-decoration: none;
+	font-size: 30px;
+	font-family: Georgia;
+	font-style: italic;
+}
+
+#registroMenu {
+    margin-top: 30px;
+    margin-left: 120px;
+}
+
+
+
 
 a {
     color: #333;
@@ -111,7 +176,6 @@ h5, h6 {
     }
 
     .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
     }
 
 header .content-wrapper {
@@ -195,13 +259,20 @@ ul#menu {
 
         ul#menu li a {
             background: none;
-            color: #999;
+            color: rgb(107, 142, 35);
+            font-weight: 600;
             text-decoration: none;
+            background-color: rgb(0,128,0);
+            border-radius: 8px;
+            font-size: 25px;
+            font-family: Arial;
+            font-style:normal;
+            padding:10px;
         }
 
         ul#menu li a:hover {
-            color: #333;
             text-decoration: none;
+            background-color: rgb(0,100,0);
         }
 
 

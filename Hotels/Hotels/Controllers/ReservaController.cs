@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Hotels.Models;
+using WebMatrix.WebData;
 
 namespace Hotels.Controllers
 {
@@ -19,7 +20,28 @@ namespace Hotels.Controllers
         public ActionResult Index()
         {
             var reservas = db.Reservas.Include(r => r.Habitacion);
+            
             return View(reservas.ToList());
+        }
+
+        /* Give a list of CurrentUser's reservas*/
+        public ActionResult Lista() {
+            //obtenemos las reservas de la base de datos
+            var reservas = db.Reservas.Include(r => r.Habitacion);
+            //creamos una lista con estas reservas
+            List<Reserva> listadereservas = reservas.ToList();
+            //una lista auxiliar donde guardaremos las reservas del usuario
+            List<Reserva> reservasDelUsuario = new List<Reserva>();
+            //para cada reserva en la lista de las reservas
+            foreach (Reserva r in listadereservas)
+            {
+                //si es del usuario agreguela a la lista de las reservas del usuario
+                if (r.UsuarioID == WebSecurity.CurrentUserId) {
+                    reservasDelUsuario.Add(r);
+                }
+            }
+            //retorne la lista de las reservas del usuario
+            return View(reservasDelUsuario);
         }
 
         //
@@ -41,8 +63,6 @@ namespace Hotels.Controllers
         public ActionResult Create()
         {
             ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID");
-            ViewBag.UserProfileID = new SelectList(db.UserProfiles , "ID", "ID");
-
             return View();
         }
 
@@ -53,15 +73,36 @@ namespace Hotels.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Reserva reserva)
         {
+            var reservas = db.Reservas.Include(r => r.Habitacion);
+            List<Reserva> listadereservas = reservas.ToList();
+            foreach (Reserva r in listadereservas)
+            {
+                if (reserva.HabitacionID == r.HabitacionID)
+                {
+                    if ((reserva.StartDate < r.EndDate && reserva.StartDate > r.StartDate) ||
+                    (reserva.EndDate < r.EndDate && reserva.EndDate > r.StartDate))
+                    {
+                        return RedirectToAction("Lista");
+                    }
+                
+                }
+                
+
+            }
+
+
+
+            //-----------------Si todo va bien guarde la reserva---------
+            reserva.UsuarioID = WebSecurity.CurrentUserId;
             if (ModelState.IsValid)
             {
+                
                 db.Reservas.Add(reserva);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            
+
             ViewBag.HabitacionID = new SelectList(db.Habitacions, "ID", "ID", reserva.HabitacionID);
-            ViewBag.UserProfileID = new SelectList(db.UserProfiles, "ID", "ID", reserva.usuario);
             return View(reserva);
         }
 

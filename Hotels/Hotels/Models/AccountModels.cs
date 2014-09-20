@@ -5,31 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
 using System.Web.Security;
+using Hotels.Models;
 
 namespace Hotels.Models
 {
-    public class UsersContext : DbContext
-    {
-        public UsersContext()
-            : base("DBContext")
-        {
-        }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
-    }
 
-    [Table("UserProfile")]
-    public class UserProfile
-    {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
-        public string Email { get; set; }
-
-        public virtual ICollection<Reserva> Reserva { get; set; }
-    }
-
-   
     public class LocalPasswordModel
     {
         [Required]
@@ -102,7 +83,7 @@ namespace Hotels.Models
 
     public class ModificacionModel
     {
-        
+
         [Display(Name = "Nombre ")]
         public string UserName { get; set; }
 

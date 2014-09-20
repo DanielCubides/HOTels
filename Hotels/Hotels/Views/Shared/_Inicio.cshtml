@@ -1,10 +1,10 @@
 ﻿@if (Request.IsAuthenticated)
 {
 
-    @Html.ActionLink("Reserva tu Almohada", "Index", "Reserva", routeValues: null, htmlAttributes: new { id = "inicioLink" })
+    @Html.ActionLink("Reserva tu Almohada", "Index", "Reserva", routeValues: null, htmlAttributes: new { id = "inicioFondoBoton" })
 
 }
 else
 {
-    @Html.ActionLink("Reserva tu Almohada", "Index", "Home", routeValues: null, htmlAttributes: new { id = "inicioLink" })
+    @Html.ActionLink("Reserva tu Almohada", "Index", "Home", routeValues: null, htmlAttributes: new { id = "inicioFondoBoton" })
 }

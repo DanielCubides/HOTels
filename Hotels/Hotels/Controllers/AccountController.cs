@@ -282,7 +282,7 @@ namespace Hotels.Controllers
         }
 
 
-             
+
 
         #region Helpers
         private ActionResult RedirectToLocal(string returnUrl)
@@ -304,7 +304,7 @@ namespace Hotels.Controllers
             RemoveLoginSuccess,
         }
 
-        
+
 
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {
