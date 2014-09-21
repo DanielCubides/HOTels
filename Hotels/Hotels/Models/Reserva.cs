@@ -20,17 +20,9 @@ namespace Hotels.Models
         [DataType(DataType.DateTime)]
         [Display(Name = "Fecha de llegada")]
         public DateTime StartDate { get; set; }
-
-<<<<<<< HEAD
-
         [Required]
         [DataType(DataType.DateTime)]
         [Display(Name = "Fecha de partida")]
-=======
-        [Required]
-        [DataType(DataType.DateTime)]
-        [Display(Name = "Fecha terminación")]
->>>>>>> origin/master
         public DateTime EndDate { get; set; }
 
         public int HabitacionID { get; set; }
