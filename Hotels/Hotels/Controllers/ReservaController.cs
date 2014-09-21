@@ -79,8 +79,8 @@ namespace Hotels.Controllers
             {
                 if (reserva.HabitacionID == r.HabitacionID)
                 {
-                    if ((reserva.StartDate < r.EndDate && reserva.StartDate > r.StartDate) ||
-                    (reserva.EndDate < r.EndDate && reserva.EndDate > r.StartDate))
+                    if ((reserva.StartDate <= r.EndDate && reserva.StartDate >= r.StartDate) ||
+                    (reserva.EndDate <= r.EndDate && reserva.EndDate >= r.StartDate))
                     {
                         return RedirectToAction("Lista");
                     }
