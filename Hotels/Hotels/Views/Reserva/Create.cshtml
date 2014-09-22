@@ -4,6 +4,12 @@
     ViewBag.Title = "Realizar reservas";
 }
 
+
+@if (!Request.IsAuthenticated)
+{
+    Response.Redirect("~/");
+}
+
 <h2>Realizar reserva</h2>
 
 @using (Html.BeginForm()) {
