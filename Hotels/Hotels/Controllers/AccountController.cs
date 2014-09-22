@@ -26,7 +26,7 @@ namespace Hotels.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-
+        
         //
         // POST: /Account/Login
 
@@ -274,6 +274,9 @@ namespace Hotels.Controllers
                     catch (Exception)
                     {
                         ModelState.AddModelError("", String.Format("Unable to create local account. An account with the name \"{0}\" may already exist.", User.Identity.Name));
+                        TempData["error"] = "Unable to create local account. this account may already exist.";
+                        //ViewBag.error = "Has elegido una fecha anterior al dia de hoy, porfavor vuelve a intentarlo con una fecha valida";
+                        return RedirectToAction("verError");
                     }
                 }
             }

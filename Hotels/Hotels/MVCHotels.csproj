@@ -322,6 +322,7 @@
     <Content Include="Views\Shared\_Inicio.cshtml" />
     <Content Include="Views\Account\Datos_personales.cshtml" />
     <Content Include="Views\Reserva\Lista.cshtml" />
+    <Content Include="Views\Reserva\verError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

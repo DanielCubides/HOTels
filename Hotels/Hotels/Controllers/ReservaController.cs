@@ -47,6 +47,12 @@ namespace Hotels.Controllers
             return View(reservasDelUsuario);
         }
 
+        public ActionResult verError() {
+            var error = TempData["error"];
+            return View(error);
+        }
+
+
         //
         // GET: /Reserva/Details/5
 
@@ -85,12 +91,16 @@ namespace Hotels.Controllers
                 {
                     if ((reserva.StartDate <= time || reserva.StartDate <= time))
                     {
-                        return RedirectToAction("Lista");
+                        TempData["error"] = "Has elegido una fecha anterior al dia de hoy, porfavor vuelve a intentarlo con una fecha valida";
+                        //ViewBag.error = "Has elegido una fecha anterior al dia de hoy, porfavor vuelve a intentarlo con una fecha valida";
+                        return RedirectToAction("verError");
                     }
                     if ((reserva.StartDate <= r.EndDate && reserva.StartDate >= r.StartDate) ||
                     (reserva.EndDate <= r.EndDate && reserva.EndDate >= r.StartDate))
                     {
-                        return RedirectToAction("Lista");
+                        TempData["error"] = "Ya hay una reserva en esta habitacion por esos dias, elige otra fecha, estamos contentos de poder atenderte ";
+                        //ViewBag.error = "Has elegido una fecha anterior al dia de hoy, porfavor vuelve a intentarlo con una fecha valida";
+                        return RedirectToAction("verError");
                     }
                 
                 }
