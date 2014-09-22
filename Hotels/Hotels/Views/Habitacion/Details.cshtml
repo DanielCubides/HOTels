@@ -4,39 +4,15 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <fieldset>
-    <legend>Habitacion</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Avalible)
+    <div id="descripcionHabitacion">
+        <center>Habitación</center><br /><br />
+        Siente la brisa marina mientras contemplas desde tu balcón privado las bellas playas de Marbella. Gran Meliá Don Pepe te ofrece 106 magníficas habitaciones premium vista mar (30 m2 / 323 sq. ft.) con extraordinarias vistas frontales al Mar Mediterráneo. Ubicadas entre la Primera y la Sexta planta, ofrecen interiores que combinan magistralmente lujo y comodidad.<br /><br />
+        Precio: $@Html.DisplayFor(model => model.Price)
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Avalible)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.StarDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.StarDate)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.EndDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.EndDate)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Price)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Price)
-    </div>
+    <img id="imagenHab1" />
 </fieldset>
-<p>
-    @Html.ActionLink("Volver a las habitaciones disponibles", "ElegirHabitacion", "Reserva", new { id = Model.ID }, null)
-</p>
+
+<p id="textVolverDetalles">Volver</p>
+@Html.ActionLink("Ver Habitacion", "ElegirHabitacion", "Reserva", new { id = Model.ID }, new { @class = "iconoAtrasDetalles" })
+

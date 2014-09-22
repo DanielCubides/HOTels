@@ -106,6 +106,121 @@ body {
 }
 
 
+#tamListaHabitaciones {
+    position: absolute;
+    margin-top:100px;
+    height: 500px;
+    width:1100px;
+    overflow: scroll;
+    background-color: green;
+}
+
+#listaHabitaciones {
+    margin-left: 250px;
+    margin-top: 90px;
+    font-size: 20px;
+	font-family: Georgia;
+	font-style: italic;
+    text-align:center;
+    width: 800px;
+    height:200px;
+}
+    
+
+#listaHabitaciones th {
+    padding: 20px;
+    border-spacing:  40px;
+}
+
+#textoListaHabitaciones {
+    font-size: 40px;
+	font-family: Georgia;
+	font-style: italic;
+    position: absolute;
+    margin-left: 230px;
+    margin-top: -45px;
+
+}
+
+#textoErrorVerHabitacion {
+    text-align: center;
+    font-size: 30px;
+	font-family: Georgia;
+	font-style: italic;
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 120px;
+}
+
+#textoAtras {
+    font-size: 20px;
+	font-family: Georgia;
+	font-style: italic;
+    position: absolute;
+    margin-left: 490px;
+    margin-top: 330px;   
+}
+
+#textoInicioR {
+    font-size: 20px;
+	font-family: Georgia;
+	font-style: italic;
+    position: absolute;
+    margin-left: 790px;
+    margin-top: 330px;   
+}
+
+#cambioContrasenaPanel {
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 20px;
+    width: 800px;
+    text-align:center;
+}
+
+#letraTexto {
+    font-size: 20px;
+	font-family: Georgia;
+	font-style: italic;
+    color:white;
+}
+
+#textoAdministrarCuenta {
+    font-size: 40px;
+	font-family: Georgia;
+	font-style: italic;
+    text-align:center;
+}
+
+#imagenHab1 {
+    top: 180px;
+	left:700px;
+	position: absolute;
+	content: url(../images/Habitacion1.jpg);
+}
+
+#descripcionHabitacion {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    margin-left: 80px;
+    margin-top:60px;
+    font-size: 25px;
+	font-family: Georgia;
+	font-style: italic;
+    padding:10px;
+}
+
+#textVolverDetalles {
+    font-size: 20px;
+	font-family: Georgia;
+	font-style: italic;
+    position:absolute;
+    margin-top:525px;
+    margin-left: 140px;
+}
+
+
 
 
 a {
@@ -260,6 +375,60 @@ a.iconoVerReverva {
     margin-left: 840px;
     margin-top: 325px;
 
+}
+
+a.iconoVerHabitacion {
+    position: absolute;
+    background: url(../images/lupaIcono.png) no-repeat top left;
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px; /* hides the link text */
+    margin-top: -15px;
+}
+
+a.iconoAgregarReserva {
+    position: absolute;
+    background: url(../images/agregarReserva.png) no-repeat top left;
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px; /* hides the link text */
+    margin-left: 50px;
+    margin-top: -15px;
+}
+
+a.iconoAtrasError {
+    position: absolute;
+    background: url(../images/Volver.png) no-repeat top left;
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px; /* hides the link text */
+    margin-left: 500px;
+    margin-top: 300px;
+}
+
+a.iconoAtrasDetalles {
+    position: absolute;
+    background: url(../images/Volver.png) no-repeat top left;
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px; /* hides the link text */
+    margin-left: 100px;
+    margin-top: 520px;
+}
+
+a.iconoVerInicioReserva {
+    position: absolute;
+    background: url(../images/InicioIcono.png) no-repeat top left;
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px; /* hides the link text */
+    margin-left: 800px;
+    margin-top: 300px;
 }
 
 /* site title

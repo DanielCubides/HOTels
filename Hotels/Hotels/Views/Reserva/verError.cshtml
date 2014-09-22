@@ -4,16 +4,14 @@
     ViewBag.Title = "verError";
 }
 
-<h2> ERROR </h2>
- <p>
-        @HttpContext.Current.User.Identity.Name
-</p>
-<p>
+<p id="textoErrorVerHabitacion">
+    ERROR!<br /><br />
     @Model
 </p>
-<p>@Html.ActionLink("Atras", "ElegirFechas")</p>
-<p>@Html.ActionLink("Inicio", "index")</p>
-    
+@Html.ActionLink("Ver Habitacion", "ElegirFechas", "Reserva", null, new { @class = "iconoAtrasError" })
+@Html.ActionLink("Inicio", "index", "Reserva", null, new { @class = "iconoVerInicioReserva" })
+<p id="textoAtras">Atrás</p>
+<p id="textoInicioR">Inicio</p>  
 
     
 
