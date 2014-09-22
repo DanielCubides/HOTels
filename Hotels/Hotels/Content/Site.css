@@ -132,6 +132,26 @@ body {
     border-spacing:  40px;
 }
 
+#listaReservas {
+    margin-left: 200px;
+    margin-top: 110px;
+    font-size: 20px;
+    font-family: Georgia;
+    font-style: italic;
+    text-align: center;
+    width: 800px;
+    height: 200px;
+}
+
+#textoListaReservas {
+    font-size: 40px;
+	font-family: Georgia;
+	font-style: italic;
+    position: absolute;
+    margin-left: 600px;
+    margin-top: -55px;
+}
+
 #textoListaHabitaciones {
     font-size: 40px;
 	font-family: Georgia;
@@ -149,6 +169,16 @@ body {
 	font-style: italic;
     position: absolute;
     margin-left: 40px;
+    margin-top: 120px;
+}
+
+#textoEliminarReserva {
+    text-align: center;
+    font-size: 30px;
+	font-family: Georgia;
+	font-style: italic;
+    position: absolute;
+    margin-left: 350px;
     margin-top: 120px;
 }
 
@@ -185,6 +215,17 @@ body {
     color:white;
 }
 
+#letraTextoSinReserva {
+    font-size: 40px;
+	font-family: Georgia;
+	font-style: italic;
+    color:white;
+    position:absolute;
+    margin-left: 480px;
+    margin-top: 220px;
+
+}
+
 #textoAdministrarCuenta {
     font-size: 40px;
 	font-family: Georgia;
@@ -219,6 +260,24 @@ body {
     margin-top:525px;
     margin-left: 140px;
 }
+
+#eliminarReserva {
+    position:absolute;
+    margin-left:700px;
+    margin-top:300px;
+}
+
+#linkRegistrate a:link, a:visited {
+    color: blue;
+}
+
+#linkRegistrate a {
+    color: white;
+}
+
+
+
+
 
 
 
@@ -431,6 +490,39 @@ a.iconoVerInicioReserva {
     margin-top: 300px;
 }
 
+a.iconoDetallesReserva {
+    position: absolute;
+    background: url(../images/detallesIcono.png) no-repeat top left;
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px; /* hides the link text */
+    
+}
+
+a.iconoEditarReserva {
+    position: absolute;
+    background: url(../images/editarIcono.png) no-repeat top left;
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px; /* hides the link text */
+    margin-left: 60px;
+}
+
+a.iconoEliminarReserva {
+    position: absolute;
+    background: url(../images/eliminarIcono.png) no-repeat top left;
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px; /* hides the link text */
+    margin-left: 120px;
+}
+
+
+
+
 /* site title
 ----------------------------------------------------------*/
 .site-title {
@@ -500,7 +592,7 @@ ul#menu {
 
         ul#menu li a {
             background: none;
-            color: rgb(107, 142, 35);
+            color: white;
             font-weight: 600;
             text-decoration: none;
             background-color: rgb(0,128,0);

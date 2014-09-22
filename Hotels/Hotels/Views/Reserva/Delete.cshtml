@@ -10,37 +10,24 @@
     Response.Redirect("~/");
 }
 
-<h2>Eliminar reservas</h2>
 
-<h3>¿Esta seguro que desea eliminar esta reserva?</h3>
-<fieldset>
-    <legend>Reserva</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.StartDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.StartDate)
-    </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.EndDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.EndDate)
-    </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Habitacion.ID)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Habitacion.ID)
-    </div>
-</fieldset>
+
+
+
+
+<p id="textoEliminarReserva">
+    Eliminar Reservas<br /><br />
+    ¿Esta seguro que desea eliminar esta reserva?
+</p>
+
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Eliminar" /> |
-        @Html.ActionLink("Volver a la lista", "Lista")
+    <p id="eliminarReserva">
+        <input type="submit" value="Eliminar" />
     </p>
+    <p id="textoAtras">Atrás</p>
+    @Html.ActionLink("Volver a la lista", "Lista", "Reserva", null, new { @class = "iconoAtrasError" })
 }
