@@ -323,6 +323,9 @@
     <Content Include="Views\Account\Datos_personales.cshtml" />
     <Content Include="Views\Reserva\Lista.cshtml" />
     <Content Include="Views\Reserva\verError.cshtml" />
+    <Content Include="Views\Reserva\ElegirFechas.cshtml" />
+    <Content Include="Views\Reserva\ElegirHabitacion.cshtml" />
+    <Content Include="Views\Reserva\CrearLaReserva.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
