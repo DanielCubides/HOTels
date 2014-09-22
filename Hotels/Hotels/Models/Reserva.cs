@@ -17,11 +17,14 @@ namespace Hotels.Models
 
 
         [Required]
-        [DataType(DataType.DateTime)]
+       
         [Display(Name = "Fecha de llegada")]
+        [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
+
+
         [Required]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         [Display(Name = "Fecha de partida")]
         public DateTime EndDate { get; set; }
 
