@@ -80,8 +80,8 @@ namespace Hotels.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Email, model.Password);
-                    WebSecurity.Login(model.Email,model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName,  model.Password);
+                    WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Reserva");
                 }
                 catch (MembershipCreateUserException e)
