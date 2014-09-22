@@ -105,13 +105,6 @@ body {
 
 }
 
-#nombreUsuarioEncabezado {
-    position: absolute;
-    margin-top:-15px;
-    margin-left: 25px;
-}
-
-
 
 
 
@@ -526,7 +519,9 @@ aside {
 }
 
 #logoutForm {
+    position: absolute;
     display: inline;
+    margin-top: -25px;
 }
 
 /* contact */
