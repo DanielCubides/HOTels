@@ -9,7 +9,9 @@
 <table>
     <tr>
      
-      
+        <th>
+            Habitacion No.
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
@@ -25,7 +27,9 @@
 
 @foreach (var item in Model) {
     <tr>
-
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)
         </td>
@@ -33,11 +37,14 @@
             @Session["dias"]
         </td>
         <td>
-            @{var price = item.Price.ToString().AsFloat() * Session["dias"].ToString().AsFloat();}
+            @{var price = item.Price.ToString().AsFloat() * Session["dias"].ToString().AsFloat();
+              var id = item.ID;}
             @price
         </td>
         <td>
-            @Html.ActionLink("crear la reserva", "CrearLaReserva", new { id = item.ID })
+            @Html.ActionLink("Ver Habitacion", "Details", "Habitacion", new { id = item.ID },null)
+            @Html.ActionLink("Crear La Reserva", "CrearLaReserva", new { id = item.ID })
+            
         </td>
     </tr>
 }
