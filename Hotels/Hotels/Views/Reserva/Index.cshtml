@@ -10,15 +10,10 @@
     Response.Redirect("~/");
 }
 
-<p>
-    @Html.ActionLink("Realizar reservas", "Create")
-</p>
 
-<p>
-    @Html.ActionLink("Ver reservas", "Lista")
-</p>
+@Html.ActionLink("ElegirFechas", "ElegirFechas", "Reserva", null, new { @class = "iconoRevervar" })
+<p id="textoIconoReservar">Reservar</p>
 
-<p>
-    @Html.ActionLink("Realizar reservas (2)", "ElegirFechas")
-</p>
 
+@Html.ActionLink("Lista", "Lista", "Reserva", null, new { @class = "iconoVerReverva" })
+<p id="textoIconoVerReserva">Ver reservas</p>

@@ -76,6 +76,21 @@ body {
     margin-left: 120px;
 }
 
+#elegirFechaReserva {
+    margin-top: 80px;
+    margin-left: 220px;
+}
+
+#cabeceraElegirFechaReserva {
+    color: white;
+	font-size: 30px;
+	font-family: Georgia;
+	font-style: italic;
+    margin-bottom:40px;
+}
+
+
+
 
 
 
@@ -189,15 +204,48 @@ footer {
     height: 100px;
 }
 
-a.iconoRevervar
-{
+a.iconoRevervar {
+    position: absolute;
     background: url(../images/iconoReservar.png) no-repeat top left;
-     display: block;
-     width: 150px;
-     height: 150px;
-     text-indent: -9999px; /* hides the link text */
-     left: 400px;
-     margin-left: 400px;
+    display: block;
+    width: 150px;
+    height: 150px;
+    text-indent: -9999px; /* hides the link text */
+    margin-left: 400px;
+    margin-top: 200px;
+}
+
+#textoIconoReservar {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+	font-family: Georgia;
+	font-style: italic;
+    margin-left: 400px;
+     margin-top: 320px;
+
+}
+
+a.iconoVerReverva {
+    position: absolute;
+    background: url(../images/iconoVerReserva.png) no-repeat top left;
+    display: block;
+    width: 150px;
+    height: 150px;
+    text-indent: -9999px; /* hides the link text */
+    margin-left: 860px;
+    margin-top: 185px;
+}
+
+#textoIconoVerReserva {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+	font-family: Georgia;
+	font-style: italic;
+    margin-left: 840px;
+    margin-top: 325px;
+
 }
 
 /* site title

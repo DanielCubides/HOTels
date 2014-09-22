@@ -4,28 +4,21 @@
     ViewBag.Title = "ElegirFechas";
 }
 
-<h2>Elige la fecha de tu reserva</h2>
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <fieldset>
-
-
-
+    <fieldset id="elegirFechaReserva">
+        <h2 id="cabeceraElegirFechaReserva">Elige la fecha de tu reserva</h2>
         <div class="editor-label">
             @Html.LabelFor(model => model.StartDate)
         </div>
         <div class="editor-field">
-
             @Html.EditorFor(model => model.StartDate)
             @Html.ValidationMessageFor(model => model.StartDate)
-
-
-
-
         </div>
 
 
@@ -60,5 +53,5 @@
         });
     </script>
 
-    <link rel="stylesheet" type="text/css" href="/Content/themes/base/jquery.ui.all.css" /> >
+    <link rel="stylesheet" type="text/css" href="/Content/themes/base/jquery.ui.all.css" />
 }

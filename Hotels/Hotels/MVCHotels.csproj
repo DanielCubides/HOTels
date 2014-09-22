@@ -257,6 +257,7 @@
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\fondo.jpg" />
     <Content Include="Images\iconoReservar.png" />
+    <Content Include="Images\iconoVerReserva.png" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
