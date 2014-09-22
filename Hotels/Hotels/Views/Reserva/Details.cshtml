@@ -1,10 +1,17 @@
 ﻿@model Hotels.Models.Reserva
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
 }
 
-<h2>Details</h2>
+
+@if (!Request.IsAuthenticated)
+{
+    Response.Redirect("~/");
+}
+
+
+<h2>Detalles</h2>
 
 <fieldset>
     <legend>Reserva</legend>
@@ -31,6 +38,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Volver a la lista", "Lista")
 </p>

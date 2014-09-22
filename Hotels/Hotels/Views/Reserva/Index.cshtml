@@ -4,6 +4,12 @@
     ViewBag.Title = "Reservas";
 }
 
+
+@if (!Request.IsAuthenticated)
+{
+    Response.Redirect("~/");
+}
+
 <p>
     @Html.ActionLink("Realizar reservas", "Create")
 </p>

@@ -1,10 +1,17 @@
 ﻿@model Hotels.Models.Reserva
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar";
 }
 
-<h2>Edit</h2>
+
+
+@if (!Request.IsAuthenticated)
+{
+    Response.Redirect("~/");
+}
+
+<h2>Editar</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -40,13 +47,13 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Guardar" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver a lista", "Lista")
 </div>
 
 @section Scripts {
