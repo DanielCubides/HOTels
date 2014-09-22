@@ -22,7 +22,7 @@ namespace Hotels.Controllers
         public ActionResult Index()
         {
             var reservas = db.Reservas.Include(r => r.Habitacion);
-            
+            //ViewBag.UserId = WebSecurity.CurrentUserId;
             return View(reservas.ToList());
         }
 
@@ -38,7 +38,8 @@ namespace Hotels.Controllers
             foreach (Reserva r in listadereservas)
             {
                 //si es del usuario agreguela a la lista de las reservas del usuario
-                if (r.UsuarioID == WebSecurity.CurrentUserId) {
+                if (r.UsuarioID == WebSecurity.CurrentUserId)
+                {
                     reservasDelUsuario.Add(r);
                 }
             }

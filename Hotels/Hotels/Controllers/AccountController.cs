@@ -37,6 +37,7 @@ namespace Hotels.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.Email, model.Password, persistCookie: model.RememberMe))
             {
+                ViewBag.UserId = WebSecurity.CurrentUserId;
                 return RedirectToAction("Index", "Reserva");
             }
 
