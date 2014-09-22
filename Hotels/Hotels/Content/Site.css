@@ -89,6 +89,27 @@ body {
     margin-bottom:40px;
 }
 
+#cerrarSesion {
+    position: absolute;
+    font-size: 10px;
+	font-family: Georgia;
+	font-style: italic;
+    margin-left: 100px;
+    margin-top: -25px;
+}
+
+#palabraSalir {
+    position: absolute;
+    margin-top:-45px;
+    margin-left: 25px;
+
+}
+
+#nombreUsuarioEncabezado {
+    position: absolute;
+    margin-top:-15px;
+    margin-left: 25px;
+}
 
 
 
