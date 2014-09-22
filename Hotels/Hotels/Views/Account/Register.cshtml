@@ -5,6 +5,13 @@
 
 
 
+@if (Request.IsAuthenticated)
+{
+
+    Response.Redirect("~/Reserva");
+}
+
+
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
@@ -44,6 +51,8 @@
         <input type="submit" value="Registrarse" />
     </fieldset>
 }
+    
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -6,6 +6,12 @@
 
 </hgroup>
 
+@if (Request.IsAuthenticated)
+{
+    Response.Redirect("~/Reserva");
+}
+
+
 <section id="loginForm">
 
     @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
