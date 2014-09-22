@@ -66,6 +66,12 @@ namespace Hotels.Controllers
             Session["ReservaStarDate"] = reserva.StartDate;
             Session["ReservaEndDate"] = reserva.EndDate;
             Session["ReservaUserId"] = reserva.UsuarioID;
+            DateTime time = DateTime.Now;
+            if ((reserva.StartDate <= time || reserva.StartDate <= time))
+            {
+                TempData["error"] = "Has elegido una fecha anterior al dia de hoy, porfavor vuelve a intentarlo con una fecha valida";
+                return RedirectToAction("verError");
+            }
 
 
 
