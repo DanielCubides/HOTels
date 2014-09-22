@@ -4,6 +4,7 @@
     ViewBag.Title = "ElegirHabitacion";
 }
 
+<<<<<<< HEAD
     <table id="listaHabitaciones">
         <p id="textoListaHabitaciones">
             Escoja la habitación que desea
@@ -48,3 +49,56 @@
             }
     </table>
 
+=======
+<h2>ElegirHabitacion</h2>
+@if (Model.Count() == 0)
+{
+    <p>No hay ninguna reserva.</p>
+}
+else { 
+<table>
+    <tr>
+     
+        <th>
+            Habitacion No.
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            No. de Dias
+        </th>
+
+        <th>
+            Total
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Session["dias"]
+        </td>
+        <td>
+            @{var price = item.Price.ToString().AsFloat() * Session["dias"].ToString().AsFloat();
+              var id = item.ID;}
+            @price
+        </td>
+        <td>
+            @Html.ActionLink("Ver Habitacion", "Details", "Habitacion", new { id = item.ID },null)
+            @Html.ActionLink("Crear La Reserva", "CrearLaReserva", new { id = item.ID })
+            
+        </td>
+    </tr>
+}
+
+</table>
+}
+>>>>>>> origin/master
