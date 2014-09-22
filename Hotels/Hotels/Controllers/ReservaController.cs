@@ -75,8 +75,11 @@ namespace Hotels.Controllers
         public ActionResult ElegirHabitacion()
         {
             Reserva reserva = new Reserva();
-            reserva.StartDate = (DateTime)Session["ReservaStarDate"];
-            reserva.EndDate = (DateTime)Session["ReservaEndDate"];
+            var stardate = (DateTime)Session["ReservaStarDate"];
+            var enddate = (DateTime)Session["ReservaEndDate"];
+            Session["dias"] = (int)(enddate - stardate).TotalDays;
+            reserva.StartDate = stardate;
+            reserva.EndDate = enddate;
             //obtenemos las reservas de la base de datos
             var reservas = db.Reservas.Include(r => r.Habitacion);
             //creamos una lista con estas reservas

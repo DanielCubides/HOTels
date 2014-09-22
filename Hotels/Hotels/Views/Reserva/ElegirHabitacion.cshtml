@@ -13,6 +13,13 @@
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
+        <th>
+            No. de Dias
+        </th>
+
+        <th>
+            Total
+        </th>
         <th></th>
     </tr>
 
@@ -21,6 +28,13 @@
 
         <td>
             @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Session["dias"]
+        </td>
+        <td>
+            @{var price = item.Price.ToString().AsFloat() * Session["dias"].ToString().AsFloat();}
+            @price
         </td>
         <td>
             @Html.ActionLink("crear la reserva", "CrearLaReserva", new { id = item.ID })

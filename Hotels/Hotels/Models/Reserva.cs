@@ -28,6 +28,8 @@ namespace Hotels.Models
         [Display(Name = "Fecha de partida")]
         public DateTime EndDate { get; set; }
 
+        [Required]
+        public double precio;
         public int HabitacionID { get; set; }
         public int UsuarioID { get; set; }
         public virtual Habitacion Habitacion { get; set; }
