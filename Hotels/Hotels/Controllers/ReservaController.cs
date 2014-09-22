@@ -17,6 +17,8 @@ namespace Hotels.Controllers
         //
         // GET: /Reserva/
 
+
+
         public ActionResult Index()
         {
             var reservas = db.Reservas.Include(r => r.Habitacion);

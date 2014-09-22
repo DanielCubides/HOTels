@@ -173,7 +173,5 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
-Hotels/Hotels/Models/Reserva.cs
 Hotels/Hotels/MVCHotels.csproj
 Hotels/Hotels/MVCHotels.csproj
-Hotels/Hotels/Views/Reserva/Index.cshtml
