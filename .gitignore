@@ -175,3 +175,4 @@ FakesAssemblies/
 
 Hotels/Hotels/MVCHotels.csproj
 Hotels/Hotels/MVCHotels.csproj
+*.pubxml
