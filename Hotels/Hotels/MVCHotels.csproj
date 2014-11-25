@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -205,6 +206,10 @@
     <Content Include="App_Data\DBContext-20140918193527.mdf" />
     <Content Include="App_Data\DBContext-20140918193527_log.ldf">
       <DependentUpon>DBContext-20140918193527.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\DBContext.mdf" />
+    <Content Include="App_Data\DBContext_log.ldf">
+      <DependentUpon>DBContext.mdf</DependentUpon>
     </Content>
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\de\Microsoft.Data.Edm.resources.dll" />
@@ -428,7 +433,9 @@
     <Content Include="Views\Reserva\ElegirHabitacion.cshtml" />
     <Content Include="Views\Reserva\CrearLaReserva.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="obj\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
